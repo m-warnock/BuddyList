@@ -1,6 +1,18 @@
 <resources>
+    //Login Activity
     <string name="app_name">BuddyList</string>
     <string name="etUsernameHint">Email</string>
     <string name="etPasswordHint">Password</string>
     <string name="buttontxt">Login</string>
+    <string name="orDivider">------------------------- OR -------------------------</string>
+    <string name="buttonRegisterLabel">Register</string>
+
+    //Register Activity
+    <string name="registerTitle">Create a new account</string>
+    <string name="etNewEmailHint">New Email Address</string>
+    <string name="etNewPasswordHint">New Password</string>
+    <string name="etConfirmPasswordHint">Retype Password</string>
+    <string name="etFNameHint">First Name</string>
+    <string name="etLNameHint">Last Name</string>
+    <string name="buttonLabelSubmit">Submit</string>
 </resources>

@@ -26,8 +26,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etEmail, etPassword;
     private Button buttonSignIn;
+    private Button buttonSignUp;
     private RequestQueue requestQueue;
+    //Home Server
     private static final String URL = "http://192.168.1.82:80/PHP/BuddyList/user_login.php";
+    //Laptop Server
+    //private static final String URL = "http://10.61.0.239:80/BuddyList/user_login.php";
     private StringRequest request;
 
     @Override
@@ -83,5 +87,14 @@ public class LoginActivity extends AppCompatActivity {
                 requestQueue.add(request);
             }
         });
+
+        buttonSignUp = (Button) findViewById(R.id.buttonSignUp);
+        buttonSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+            }
+        });
     }
+
 }
