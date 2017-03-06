@@ -15,4 +15,10 @@
     <string name="etFNameHint">First Name</string>
     <string name="etLNameHint">Last Name</string>
     <string name="buttonLabelSubmit">Submit</string>
+
+    //Menu
+    <string name="toolbarMenuLogout">Logout</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
