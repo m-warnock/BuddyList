@@ -55,8 +55,23 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             if(jsonObject.names().get(0).equals("success")){
-                                Toast.makeText(LoginActivity.this, jsonObject.getString("success"), Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+
+                                //parse Json associative array into its parts and place them in the user info object
+                                String id = jsonObject.getJSONObject("success").getString("id");
+                                String email = jsonObject.getJSONObject("success").getString("email");
+                                String firstName = jsonObject.getJSONObject("success").getString("fname");
+                                String lastName = jsonObject.getJSONObject("success").getString("lname");
+                                UserData userInfo = new UserData(id, email, firstName, lastName);
+
+                                //Pass userInfo to HomeActivity so user doesn't have to keep giving account info
+                                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                Bundle bundle = new Bundle();
+                                bundle.putParcelable("userData", userInfo);
+                                intent.putExtras(bundle);
+                                startActivity(intent);
+
+                                Toast.makeText(LoginActivity.this, "Welcome " + userInfo.getFirstName() + " " + userInfo.getLastName(), Toast.LENGTH_SHORT).show();
+
                             }
                             else{
                                 Toast.makeText(getApplicationContext(), jsonObject.getString("failure"), Toast.LENGTH_SHORT).show();
@@ -77,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError{
                         HashMap<String,String> hashMap = new HashMap<>();
-                        hashMap.put("Email", etEmail.getText().toString());
+                        hashMap.put("Email", etEmail.getText().toString().toLowerCase());
                         hashMap.put("Password", etPassword.getText().toString());
 
                         return hashMap;

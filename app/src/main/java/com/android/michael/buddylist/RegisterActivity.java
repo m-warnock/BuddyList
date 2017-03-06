@@ -67,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                     //check if passwords match and length requirement and 1 digit requirement
                     if (etPassword.getText().toString().equals(etConfirmPassword.getText().toString())) {
-                        if (etPassword.getText().length() > 7) {
+                        if (etPassword.getText().length() > 7 && etPassword.getText().length() < 33) {
                             if (etPassword.getText().toString().matches(".*\\d+.*")) {
                                 if(etPassword.getText().toString().matches(".*[A-Z].*")){
                                     validPassword = true;
@@ -78,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Password must have at least 1 digit", Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(getApplicationContext(), "Password must be at least 8 characters", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Password must be at least 8-32 characters long", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
@@ -108,7 +108,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 JSONObject jsonObject = new JSONObject(response);
                                 if(jsonObject.names().get(0).equals("success")){
                                     Toast.makeText(getApplicationContext(), jsonObject.getString("success"), Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                                    //startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                                 }
                                 else{
                                     Toast.makeText(getApplicationContext(), jsonObject.getString("failure"), Toast.LENGTH_SHORT).show();
@@ -126,7 +126,7 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError{
                             HashMap<String,String> hashMap = new HashMap<>();
-                            hashMap.put("NewEmail", etEmail.getText().toString());
+                            hashMap.put("NewEmail", etEmail.getText().toString().toLowerCase());
                             hashMap.put("NewPassword", etPassword.getText().toString());
                             hashMap.put("FName", etFirstName.getText().toString());
                             hashMap.put("LName", etLastName.getText().toString());

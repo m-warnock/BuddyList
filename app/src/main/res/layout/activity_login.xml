@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -14,25 +15,31 @@
     android:weightSum="1">
 
 
+    <ImageView
+        android:id="@+id/buddyListLogo"
+        android:layout_width="265dp"
+        android:layout_height="104dp"
+        android:layout_marginBottom="25dp"
+        app:srcCompat="@drawable/buddylist_logo" />
+
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
         android:hint="@string/etUsernameHint"
         android:id="@+id/etEmail"
-        android:backgroundTint="@color/colorPrimaryDark"
-        android:layout_weight="0.05" />
+        android:backgroundTint="@color/colorPrimaryDark" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:inputType="textPassword"
-        android:ems="10"
         android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="0.08"
         android:backgroundTint="@color/colorPrimaryDark"
-        android:hint="@string/etPasswordHint" />
+        android:ems="10"
+        android:hint="@string/etPasswordHint"
+        android:inputType="textPassword" />
 
     <Button
         android:text="@string/buttontxt"
