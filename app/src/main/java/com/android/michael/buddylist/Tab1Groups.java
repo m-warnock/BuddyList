@@ -5,10 +5,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.michael.buddylist.R;
+
+import java.util.ArrayList;
 
 
 public class Tab1Groups extends Fragment {
@@ -18,11 +22,22 @@ public class Tab1Groups extends Fragment {
 
         View rootView = inflater.inflate(R.layout.tab1_home_frag, container, false);
 
-        String[] myArray = {"Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel", "India"};
+        ArrayList<String> groups = new ArrayList<String>();
+        groups.add("Alpha");
+        groups.add("Bravo");
+        ListView listView = (ListView) rootView.findViewById(R.id.LVgroupList);
+        listView.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, groups));
 
-        ListView myList = (ListView) rootView.findViewById(R.id.LVgroupList);
-        myList.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(), android.R.layout.simple_list_item_1, myArray));
-
+        //listener for list items
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Toast.makeText(getContext(),
+                        "Click ListItem Number " + position, Toast.LENGTH_LONG)
+                        .show();
+            }
+        });
         return rootView;
     }
 

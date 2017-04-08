@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
     //Laptop WAMP
     //private static final String URL = "http://10.205.0.219:80/BuddyList/register.php";
     //Desktop WAMP
-    private static final String URL = "http://192.168.1.82:80/PHP/BuddyList/user_registration.php";
+    private static final String URL = "http://172.127.140.233:80/PHP/BuddyList/user_registration.php";
     private StringRequest request;
 
     @Override

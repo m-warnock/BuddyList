@@ -1,0 +1,14 @@
+CREATE TABLE `group_list_data` (
+    GroupID int(12) unsigned NOT NULL,
+    ListID int(12) unsigned NOT NULL,
+    ListItem VARCHAR(255) NOT NULL,
+    PRIMARY KEY (GroupID, ListID),
+    --FOREIGN KEY (GroupID) REFERENCES member_of(GroupID)
+)
+ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `group_list_data`
+    --ADD CONSTRAINT `fkconstraint`
+    ADD FOREIGN KEY (GroupID) REFERENCES member_of(GroupID);
+          --ON UPDATE CASCADE
+          --ON DELETE CASCADE;

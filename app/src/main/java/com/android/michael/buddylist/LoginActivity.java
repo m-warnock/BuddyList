@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button buttonSignUp;
     private RequestQueue requestQueue;
     //Home Server
-    private static final String URL = "http://192.168.1.82:80/PHP/BuddyList/user_login.php";
+    private static final String URL = "http://172.127.140.233:80/PHP/BuddyList/user_login.php";
     //Laptop Server
     //private static final String URL = "http://10.61.0.239:80/BuddyList/user_login.php";
     private StringRequest request;
