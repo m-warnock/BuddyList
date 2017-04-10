@@ -13,8 +13,7 @@ CREATE TABLE `user` (
 --
 -- Dumping data for table `user`
 --
-
-INSERT INTO `user` (`Id`, `Email`, `Password`, `FName`, `LName`) VALUES
-(0, 'michaelcwarnock@gmail.com', '202cb962ac59075b964b07152d234b70', 'Michael', 'Warnock');
+INSERT INTO `user` (`Id`, `Email`, `Password`, `FName`, `LName`)
+VALUES(2, 'test', '202cb962ac59075b964b07152d234b70', 'Jeremy', 'Clarkson');
 
 -- password is 123 for ^^

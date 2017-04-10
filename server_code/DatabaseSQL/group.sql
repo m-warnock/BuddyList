@@ -4,3 +4,6 @@ CREATE TABLE `group` (
     PRIMARY KEY (GroupID)
 )
 ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `group`
+ADD FOREIGN KEY (GroupID) REFERENCES group_list_data(GroupID);

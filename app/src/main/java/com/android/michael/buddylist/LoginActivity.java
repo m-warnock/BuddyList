@@ -3,7 +3,6 @@ package com.android.michael.buddylist;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,10 +28,9 @@ public class LoginActivity extends AppCompatActivity {
     private Button buttonSignIn;
     private Button buttonSignUp;
     private RequestQueue requestQueue;
-    //Home Server
-    private static final String URL = "http://172.127.140.233:80/PHP/BuddyList/user_login.php";
-    //Laptop Server
-    //private static final String URL = "http://10.61.0.239:80/BuddyList/user_login.php";
+    //To Access DB
+    private static final String URL = "http://buddylist.000webhostapp.com/user_login.php";
+    //use username: test | password: 123
     private StringRequest request;
 
     @Override

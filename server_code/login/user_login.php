@@ -11,11 +11,16 @@ if (isset($_POST['Email']) && isset($_POST['Password'])) {
     if(!empty($email) && !empty($password)){
         
         $encryptedPassword = md5($password);
-        $query = "SELECT * FROM user WHERE Email = '$email' AND Password='$encryptedPassword' ";
+        $query = "SELECT Id, Email, FName, LName FROM `user` WHERE Email = '$email' AND Password='$encryptedPassword' ";
         $result = mysqli_query($connection,$query);
         
         if (mysqli_num_rows($result) > 0) {
-            $json['success'] = 'Welcome! ' .$email;
+            $row = mysqli_fetch_assoc($result);
+            $json['success'] = array(
+                'id'=>$row['Id'],
+                'email'=>$row['Email'],
+                'fname'=>$row['FName'],
+                'lname'=>$row['LName']);
             echo json_encode($json);
         }
         else{
@@ -35,6 +40,5 @@ if (isset($_POST['Email']) && isset($_POST['Password'])) {
         }
     }
 }
-  
-?>
 
+?>

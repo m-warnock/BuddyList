@@ -29,10 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etEmail, etPassword, etConfirmPassword, etFirstName, etLastName;
     private Button buttonSubmit;
     private RequestQueue requestQueue;
-    //Laptop WAMP
-    //private static final String URL = "http://10.205.0.219:80/BuddyList/register.php";
-    //Desktop WAMP
-    private static final String URL = "http://172.127.140.233:80/PHP/BuddyList/user_registration.php";
+    //To access DB
+    private static final String URL = "http://buddylist.000webhostapp.com/user_registration.php";
     private StringRequest request;
 
     @Override
