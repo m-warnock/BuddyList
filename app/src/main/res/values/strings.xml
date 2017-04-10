@@ -22,6 +22,10 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
+    //Create New Group
+    <string name="tvNewGroupLabel">Create a New Group</string>
+    <string name="etGroupNameHint">Enter a Group Name</string>
+    <string name="inviteOnlySwitchLabel">Join By Invite Only</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

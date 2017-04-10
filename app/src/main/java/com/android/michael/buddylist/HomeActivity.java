@@ -110,11 +110,8 @@ public class HomeActivity extends AppCompatActivity {
                     Tab1Groups tab1 = new Tab1Groups();
                     return tab1;
                 case 1:
-                    Tab2Lists tab2 = new Tab2Lists();
+                    Tab2Chat tab2 = new Tab2Chat();
                     return tab2;
-                case 2:
-                    Tab3Chat tab3 = new Tab3Chat();
-                    return tab3;
                 default:
                     return null;
             }
@@ -122,8 +119,8 @@ public class HomeActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 2 total pages.
+            return 2;
         }
 
         @Override
@@ -132,8 +129,6 @@ public class HomeActivity extends AppCompatActivity {
                 case 0:
                     return "Groups";
                 case 1:
-                    return "Lists";
-                case 2:
                     return "Chat";
             }
             return null;

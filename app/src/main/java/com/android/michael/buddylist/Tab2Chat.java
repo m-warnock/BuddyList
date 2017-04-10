@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class Tab3Chat extends Fragment {
+public class Tab2Chat extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
