@@ -14,7 +14,27 @@ import android.view.MenuItem;
 
 import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity{
+    private int i = 0;
+    /**
+     * Code looks good. Perhaps there is a more elegant way than nesting a bunch of if statements to
+     * validate input in the RegisterActivity. But it's functional.
+     *
+     * I while I looked at the code, I wasn't able to access any activities except for the fist two
+     * (main page and register) because I couldn't connect. I'm sure you'll change that ip from being
+     * hardcoded.
+     *
+     * Make sure to include ways of keeping user data private, though I'm not familiar enough with
+     * Java to recommend how.
+     *
+     * The app looks beautiful, inspires me to step up my xml game.
+     *
+     * Good job keeping your code modular.
+     *
+     * You're good at keeping code commented, but I would have liked to see some comments for what
+     * a 'parcel' is, I was in the dark.
+     */
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
