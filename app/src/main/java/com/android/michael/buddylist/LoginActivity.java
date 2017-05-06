@@ -28,10 +28,11 @@ public class LoginActivity extends AppCompatActivity {
     private Button buttonSignIn;
     private Button buttonSignUp;
     private RequestQueue requestQueue;
-    //To Access DB
-    private static final String URL = "http://buddylist.000webhostapp.com/user_login.php";
-    //use username: test | password: 123
     private StringRequest request;
+
+    //To Access DB
+    //use username: test | password: 123 to login
+    private static final String URL = "http://buddylist.000webhostapp.com/user_login.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                                 UserData userInfo = new UserData(id, email, firstName, lastName);
 
                                 //Pass userInfo to HomeActivity so user doesn't have to keep giving account info
-                                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), GroupActivity.class);
                                 Bundle bundle = new Bundle();
                                 bundle.putParcelable("userData", userInfo);
                                 intent.putExtras(bundle);

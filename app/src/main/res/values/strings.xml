@@ -26,6 +26,7 @@
     <string name="tvNewGroupLabel">Create a New Group</string>
     <string name="etGroupNameHint">Enter a Group Name</string>
     <string name="inviteOnlySwitchLabel">Join By Invite Only</string>
+    <string name="etGroupDesHint">Group Description</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

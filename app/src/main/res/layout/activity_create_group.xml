@@ -31,17 +31,31 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/etGroupNameHint" />
+        android:hint="@string/etGroupNameHint" />
+
+    <EditText
+        android:id="@+id/etGroupDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:maxHeight="100dp"
+        android:maxLength="120"
+        android:hint="@string/etGroupDesHint"
+        android:inputType="textMultiLine" />
 
     <Switch
         android:id="@+id/byInviteOnlySwitch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.06"
+        android:isScrollContainer="true"
         android:switchMinWidth="40dp"
         android:text="@string/inviteOnlySwitchLabel"
         android:textAllCaps="false"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+         />
+
+
 
 
 </LinearLayout>

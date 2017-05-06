@@ -3,6 +3,8 @@ package com.android.michael.buddylist;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.List;
+
 /**
  * Created by Michael on 3/5/2017.
  */
@@ -12,6 +14,7 @@ public class UserData implements Parcelable {
     private String email;
     private String firstName;
     private String lastName;
+    private List<GroupData> groupDataList;
 
     public UserData(String id, String email, String firstName, String lastName) {
         this.id = id;
@@ -92,5 +95,13 @@ public class UserData implements Parcelable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public List<GroupData> getGroupDataList() {
+        return groupDataList;
+    }
+
+    public void setGroupDataList(List<GroupData> groupDataList) {
+        this.groupDataList = groupDataList;
     }
 }
