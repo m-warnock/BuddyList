@@ -5,13 +5,13 @@ package com.android.michael.buddylist;
  */
 
 public class GroupData {
-    private String GroupID;
+    private int GroupID;
     private String GroupName;
     private String GroupDescription;
     private String GroupLeader;
     private String CreationDate;
 
-    public GroupData(String groupID, String groupName, String groupDescription, String groupLeader, String creationDate) {
+    public GroupData(int groupID, String groupName, String groupDescription, String groupLeader, String creationDate) {
         GroupID = groupID;
         GroupName = groupName;
         GroupDescription = groupDescription;
@@ -19,11 +19,11 @@ public class GroupData {
         CreationDate = creationDate;
     }
 
-    public String getGroupID() {
+    public int getGroupID() {
         return GroupID;
     }
 
-    public void setGroupID(String groupID) {
+    public void setGroupID(int groupID) {
         GroupID = groupID;
     }
 

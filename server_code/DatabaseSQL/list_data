@@ -1,7 +1,7 @@
-CREATE TABLE `group_list_data` (
-    GroupID int(12) unsigned NOT NULL,
+CREATE TABLE `list_data` (
     ListID int(12) unsigned NOT NULL,
+    ItemNumber int(12) unsigned NOT NULL,
     ListItem VARCHAR(255) NOT NULL,
-    PRIMARY KEY (GroupID, ListID),
+    PRIMARY KEY (ListID, ItemNumber),
 )
 ENGINE=INNODB DEFAULT CHARSET=utf8;

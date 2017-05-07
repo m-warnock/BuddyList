@@ -20,10 +20,10 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class GroupActivity extends AppCompatActivity {
-    UserData userInfo;
+    public static UserData userInfo;
     private RecyclerView recyclerView;
     private GridLayoutManager gridLayoutManager;
-    private CustomAdapter adapter;
+    private GroupRecyclerViewAdapter adapter;
     private List<GroupData> data_list;
 
 
@@ -36,7 +36,7 @@ public class GroupActivity extends AppCompatActivity {
         if (b != null)
             userInfo = b.getParcelable("userData");
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.group_recycler_view);
         data_list  = new ArrayList<>();
 
         load_data_from_server(userInfo.getId());
@@ -44,7 +44,7 @@ public class GroupActivity extends AppCompatActivity {
         gridLayoutManager = new GridLayoutManager(this,1);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        adapter = new CustomAdapter(this,data_list);
+        adapter = new GroupRecyclerViewAdapter(this,data_list);
         recyclerView.setAdapter(adapter);
 
 
@@ -70,7 +70,7 @@ public class GroupActivity extends AppCompatActivity {
 
                         JSONObject object = array.getJSONObject(i);
 
-                        GroupData data = new GroupData(object.getString("GroupID"),
+                        GroupData data = new GroupData(object.getInt("GroupID"),
                                 object.getString("GroupName"),
                                 object.getString("GroupDescription"),
                                 object.getString("GroupLeader"),
@@ -79,11 +79,6 @@ public class GroupActivity extends AppCompatActivity {
                         data_list.add(data);
                     }
                     userInfo.setGroupDataList(data_list);
-                    Intent intent = new Intent(getApplicationContext(), GroupActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putParcelable("userData", userInfo);
-                    intent.putExtras(bundle);
-
 
                 } catch (IOException e) {
                     e.printStackTrace();

@@ -1,0 +1,6 @@
+CREATE TABLE `group_list` (
+    GroupID int(12) unsigned NOT NULL,
+    ListID int(12) unsigned NOT NULL,
+    PRIMARY KEY (GroupID, ListID)
+)
+ENGINE=INNODB DEFAULT CHARSET=utf8;

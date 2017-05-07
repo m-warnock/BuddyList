@@ -15,12 +15,17 @@ public class UserData implements Parcelable {
     private String firstName;
     private String lastName;
     private List<GroupData> groupDataList;
+    private List<ListData> listDataList;
+    private int currentGroupID;
+    private int currentListID;
 
     public UserData(String id, String email, String firstName, String lastName) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.groupDataList = null;
+        this.listDataList = null;
     }
 
     public UserData(UserData source){
@@ -103,5 +108,29 @@ public class UserData implements Parcelable {
 
     public void setGroupDataList(List<GroupData> groupDataList) {
         this.groupDataList = groupDataList;
+    }
+
+    public int getCurrentGroupID() {
+        return currentGroupID;
+    }
+
+    public void setCurrentGroupID(int currentGroupID) {
+        this.currentGroupID = currentGroupID;
+    }
+
+    public int getCurrentListID() {
+        return currentListID;
+    }
+
+    public void setCurrentListID(int currentListID) {
+        this.currentListID = currentListID;
+    }
+
+    public List<ListData> getListDataList() {
+        return listDataList;
+    }
+
+    public void setListDataList(List<ListData> listDataList) {
+        this.listDataList = listDataList;
     }
 }

@@ -11,12 +11,12 @@ import android.widget.TextView;
 import java.util.List;
 
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecyclerViewAdapter.ViewHolder> {
 
     private Context context;
     private List<GroupData> my_data;
 
-    public CustomAdapter(Context context, List<GroupData> my_data) {
+    public GroupRecyclerViewAdapter(Context context, List<GroupData> my_data) {
         this.context = context;
         this.my_data = my_data;
     }
@@ -39,8 +39,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, GroupActivity.class);
-                intent.putExtra("position", position);
+                GroupData group = GroupActivity.userInfo.getGroupDataList().get(position);
+                GroupActivity.userInfo.setCurrentGroupID(group.getGroupID());
+                Intent intent = new Intent(context, ListActivity.class);
                 context.startActivity(intent);
             }
         });

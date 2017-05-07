@@ -1,0 +1,7 @@
+CREATE TABLE `list` (
+    ListID int(12) unsigned NOT NULL AUTO_INCREMENT,
+    ListName VARCHAR(255) NOT NULL,
+    CreationDate DATE,
+    PRIMARY KEY (ListID)
+)
+ENGINE=INNODB DEFAULT CHARSET=utf8;

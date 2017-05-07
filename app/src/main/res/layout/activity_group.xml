@@ -8,7 +8,7 @@ android:layout_height="wrap_content"
 
 
 <android.support.v7.widget.RecyclerView
-    android:id="@+id/recycler_view"
+    android:id="@+id/group_recycler_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardUseCompatPadding="true"
@@ -18,5 +18,16 @@ android:layout_height="wrap_content"
     android:layout_marginLeft="6dp"
     android:layout_marginRight="6dp"
     android:layout_marginTop="6dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:layout_marginTop="425dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

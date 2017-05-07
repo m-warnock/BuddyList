@@ -18,28 +18,28 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class ListActivity extends AppCompatActivity {
+public class ListContentsActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private GridLayoutManager gridLayoutManager;
-    private ListRecyclerViewAdapter adapter;
-    private List<ListData> data_list;
+    private ListContentsRecyclerViewAdapter adapter;
+    private List<String> data_list;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_list_contents);
 
-        recyclerView = (RecyclerView) findViewById(R.id.list_recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.listdata_recycler_view);
         data_list  = new ArrayList<>();
 
-        load_data_from_server(GroupActivity.userInfo.getCurrentGroupID());
+        load_data_from_server(GroupActivity.userInfo.getCurrentListID());
 
-        gridLayoutManager = new GridLayoutManager(this,2);
+        gridLayoutManager = new GridLayoutManager(this,1);
         recyclerView.setLayoutManager(gridLayoutManager);
 
-        adapter = new ListRecyclerViewAdapter(this, data_list);
+        adapter = new ListContentsRecyclerViewAdapter(this, data_list);
         recyclerView.setAdapter(adapter);
 
     }
@@ -52,7 +52,7 @@ public class ListActivity extends AppCompatActivity {
 
                 OkHttpClient client = new OkHttpClient();
                 Request request = new Request.Builder()
-                        .url("https://buddylist.000webhostapp.com/retrieve_lists.php?id="+id)
+                        .url("https://buddylist.000webhostapp.com/retrieve_list_contents.php?id="+id)
                         .build();
                 try {
                     Response response = client.newCall(request).execute();
@@ -63,13 +63,8 @@ public class ListActivity extends AppCompatActivity {
 
                         JSONObject object = array.getJSONObject(i);
 
-                        ListData data = new ListData(object.getInt("listID"),
-                                object.getString("ListName"),
-                                object.getString("CreationDate"));
-
-                        data_list.add(data);
+                        data_list.add(object.getString("ListItem"));
                     }
-                    GroupActivity.userInfo.setListDataList(data_list);
 
                 } catch (IOException e) {
                     e.printStackTrace();
